@@ -37,6 +37,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC4603292BE6375300A81A0F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CCFCC6612BE61B6A0079E08B /* Main.storyboard */,
+				CCFCC6662BE61B6B0079E08B /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CC46032A2BE6377100A81A0F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CCFCC65F2BE61B6A0079E08B /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CC46032B2BE6378400A81A0F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CCFCC6642BE61B6B0079E08B /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CC46032C2BE637AC00A81A0F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CCFCC65B2BE61B6A0079E08B /* AppDelegate.swift */,
+				CCFCC65D2BE61B6A0079E08B /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		CCFCC64F2BE61B6A0079E08B = {
 			isa = PBXGroup;
 			children = (
@@ -56,12 +90,10 @@
 		CCFCC65A2BE61B6A0079E08B /* ProtectedGallery */ = {
 			isa = PBXGroup;
 			children = (
-				CCFCC65B2BE61B6A0079E08B /* AppDelegate.swift */,
-				CCFCC65D2BE61B6A0079E08B /* SceneDelegate.swift */,
-				CCFCC65F2BE61B6A0079E08B /* ViewController.swift */,
-				CCFCC6612BE61B6A0079E08B /* Main.storyboard */,
-				CCFCC6642BE61B6B0079E08B /* Assets.xcassets */,
-				CCFCC6662BE61B6B0079E08B /* LaunchScreen.storyboard */,
+				CC46032C2BE637AC00A81A0F /* App */,
+				CC46032A2BE6377100A81A0F /* Controllers */,
+				CC4603292BE6375300A81A0F /* Views */,
+				CC46032B2BE6378400A81A0F /* Resources */,
 				CCFCC6692BE61B6B0079E08B /* Info.plist */,
 			);
 			path = ProtectedGallery;
