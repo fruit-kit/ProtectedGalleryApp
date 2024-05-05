@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		CC617BD02BE761DA0079F4BB /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CC617BCF2BE761DA0079F4BB /* Lottie */; };
+		CC617BD32BE763AF0079F4BB /* splashAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = CC617BD22BE763AF0079F4BB /* splashAnimation.json */; };
 		CCFCC65C2BE61B6A0079E08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFCC65B2BE61B6A0079E08B /* AppDelegate.swift */; };
 		CCFCC65E2BE61B6A0079E08B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFCC65D2BE61B6A0079E08B /* SceneDelegate.swift */; };
-		CCFCC6602BE61B6A0079E08B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFCC65F2BE61B6A0079E08B /* ViewController.swift */; };
+		CCFCC6602BE61B6A0079E08B /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFCC65F2BE61B6A0079E08B /* SplashVC.swift */; };
 		CCFCC6632BE61B6A0079E08B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CCFCC6622BE61B6A0079E08B /* Base */; };
 		CCFCC6652BE61B6B0079E08B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCFCC6642BE61B6B0079E08B /* Assets.xcassets */; };
 		CCFCC6682BE61B6B0079E08B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CCFCC6672BE61B6B0079E08B /* Base */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC617BD22BE763AF0079F4BB /* splashAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splashAnimation.json; sourceTree = "<group>"; };
 		CCFCC6582BE61B6A0079E08B /* ProtectedGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProtectedGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFCC65B2BE61B6A0079E08B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCFCC65D2BE61B6A0079E08B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CCFCC65F2BE61B6A0079E08B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CCFCC65F2BE61B6A0079E08B /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		CCFCC6622BE61B6A0079E08B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CCFCC6642BE61B6B0079E08B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCFCC6672BE61B6B0079E08B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,7 +53,7 @@
 		CC46032A2BE6377100A81A0F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CCFCC65F2BE61B6A0079E08B /* ViewController.swift */,
+				CCFCC65F2BE61B6A0079E08B /* SplashVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -59,6 +61,7 @@
 		CC46032B2BE6378400A81A0F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CC617BD12BE763940079F4BB /* Animation */,
 				CCFCC6642BE61B6B0079E08B /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -71,6 +74,14 @@
 				CCFCC65D2BE61B6A0079E08B /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		CC617BD12BE763940079F4BB /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				CC617BD22BE763AF0079F4BB /* splashAnimation.json */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		CCFCC64F2BE61B6A0079E08B = {
@@ -165,6 +176,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC617BD32BE763AF0079F4BB /* splashAnimation.json in Resources */,
 				CCFCC6652BE61B6B0079E08B /* Assets.xcassets in Resources */,
 				CCFCC6682BE61B6B0079E08B /* Base in Resources */,
 				CCFCC6632BE61B6A0079E08B /* Base in Resources */,
@@ -178,7 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCFCC6602BE61B6A0079E08B /* ViewController.swift in Sources */,
+				CCFCC6602BE61B6A0079E08B /* SplashVC.swift in Sources */,
 				CCFCC65C2BE61B6A0079E08B /* AppDelegate.swift in Sources */,
 				CCFCC65E2BE61B6A0079E08B /* SceneDelegate.swift in Sources */,
 			);
