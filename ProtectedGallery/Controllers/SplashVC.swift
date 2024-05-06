@@ -31,7 +31,14 @@ class SplashVC: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
             [weak self] in
+            
             self?.animationView.pause()
+            
+            let destinationVC = LoginVC()
+            
+            destinationVC.modalPresentationStyle = .fullScreen
+            
+            self?.present(destinationVC, animated: true)
         }
     }
     
