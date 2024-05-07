@@ -11,6 +11,8 @@
 		CC617BD32BE763AF0079F4BB /* splashAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = CC617BD22BE763AF0079F4BB /* splashAnimation.json */; };
 		CC617BD62BE7755D0079F4BB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC617BD42BE7755D0079F4BB /* LoginVC.swift */; };
 		CC617BD72BE7755D0079F4BB /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC617BD52BE7755D0079F4BB /* LoginVC.xib */; };
+		CCCCDEA52BEA41C700984255 /* GalleryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCCDEA32BEA41C700984255 /* GalleryVC.swift */; };
+		CCCCDEA62BEA41C700984255 /* GalleryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCCCDEA42BEA41C700984255 /* GalleryVC.xib */; };
 		CCFCC65C2BE61B6A0079E08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFCC65B2BE61B6A0079E08B /* AppDelegate.swift */; };
 		CCFCC65E2BE61B6A0079E08B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFCC65D2BE61B6A0079E08B /* SceneDelegate.swift */; };
 		CCFCC6602BE61B6A0079E08B /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFCC65F2BE61B6A0079E08B /* SplashVC.swift */; };
@@ -23,6 +25,8 @@
 		CC617BD22BE763AF0079F4BB /* splashAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splashAnimation.json; sourceTree = "<group>"; };
 		CC617BD42BE7755D0079F4BB /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		CC617BD52BE7755D0079F4BB /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		CCCCDEA32BEA41C700984255 /* GalleryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryVC.swift; sourceTree = "<group>"; };
+		CCCCDEA42BEA41C700984255 /* GalleryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryVC.xib; sourceTree = "<group>"; };
 		CCFCC6582BE61B6A0079E08B /* ProtectedGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProtectedGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFCC65B2BE61B6A0079E08B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCFCC65D2BE61B6A0079E08B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +55,7 @@
 				CCFCC6612BE61B6A0079E08B /* Main.storyboard */,
 				CCFCC6662BE61B6B0079E08B /* LaunchScreen.storyboard */,
 				CC617BD52BE7755D0079F4BB /* LoginVC.xib */,
+				CCCCDEA42BEA41C700984255 /* GalleryVC.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -58,6 +63,7 @@
 		CC46032A2BE6377100A81A0F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CCCCDEA32BEA41C700984255 /* GalleryVC.swift */,
 				CCFCC65F2BE61B6A0079E08B /* SplashVC.swift */,
 				CC617BD42BE7755D0079F4BB /* LoginVC.swift */,
 			);
@@ -183,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC617BD72BE7755D0079F4BB /* LoginVC.xib in Resources */,
+				CCCCDEA62BEA41C700984255 /* GalleryVC.xib in Resources */,
 				CC617BD32BE763AF0079F4BB /* splashAnimation.json in Resources */,
 				CCFCC6652BE61B6B0079E08B /* Assets.xcassets in Resources */,
 				CCFCC6682BE61B6B0079E08B /* Base in Resources */,
@@ -198,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCFCC6602BE61B6A0079E08B /* SplashVC.swift in Sources */,
+				CCCCDEA52BEA41C700984255 /* GalleryVC.swift in Sources */,
 				CCFCC65C2BE61B6A0079E08B /* AppDelegate.swift in Sources */,
 				CC617BD62BE7755D0079F4BB /* LoginVC.swift in Sources */,
 				CCFCC65E2BE61B6A0079E08B /* SceneDelegate.swift in Sources */,
