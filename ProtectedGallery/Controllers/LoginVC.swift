@@ -17,7 +17,11 @@ class LoginVC: UIViewController {
         
         didSet {
             
-            displayPinLabel.text = enteredPin
+            let pinLenght = enteredPin.count
+            
+            let maskedPin = String(repeating: "*", count: pinLenght)
+            
+            self.displayPinLabel.text = maskedPin
             
             if enteredPin == requiredPin {
                 
