@@ -10,15 +10,22 @@ import UIKit
 import Lottie
 
 class SplashVC: UIViewController {
-
+    
+    // MARK: - Outlets
+    
     @IBOutlet weak var animationView: LottieAnimationView!
+    
+    // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         SplashAnimation()
+        
     }
-
+    
+    // MARK: - Private Methods
+    
     private func SplashAnimation() {
         
         animationView.contentMode = .scaleAspectFit
@@ -34,12 +41,20 @@ class SplashVC: UIViewController {
             
             self?.animationView.pause()
             
-            let destinationVC = LoginVC()
+            self?.presentGalleryVC()
             
-            destinationVC.modalPresentationStyle = .fullScreen
-            
-            self?.present(destinationVC, animated: true)
         }
+        
+    }
+    
+    private func presentGalleryVC() {
+        
+        let destinationVC = LoginVC()
+        
+        destinationVC.modalPresentationStyle = .fullScreen
+        
+        self.present(destinationVC, animated: true)
+        
     }
     
 }

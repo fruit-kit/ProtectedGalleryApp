@@ -9,7 +9,11 @@ import UIKit
 
 class LoginVC: UIViewController {
     
+    // MARK: - Outlets
+    
     @IBOutlet weak var displayPinLabel: UILabel!
+    
+    // MARK: - Properties
     
     var requiredPin = "1111"
     
@@ -25,7 +29,11 @@ class LoginVC: UIViewController {
             
             if enteredPin == requiredPin {
                 
-                print("You have entered!")
+                let destinationVC = GalleryVC()
+                
+                destinationVC.modalPresentationStyle = .fullScreen
+                
+                self.present(destinationVC, animated: true)
                 
             }
             
@@ -38,20 +46,26 @@ class LoginVC: UIViewController {
         }
     }
 
+    // MARK: - View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
     
+    // MARK: - Actions
+    
     @IBAction func pinNumberButtonPressed(_ sender: UIButton) {
         
         self.enteredPin.append("\(sender.tag)")
+        
     }
     
     
     @IBAction func faceIDButtonPressed(_ sender: Any) {
         
         print(#function)
+        
     }
     
     
@@ -62,9 +76,11 @@ class LoginVC: UIViewController {
             self.displayPinLabel.text = "Enter PIN"
             
             return
+            
         }
         
         self.enteredPin.removeLast()
+        
     }
     
 }
