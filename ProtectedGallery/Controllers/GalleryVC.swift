@@ -20,7 +20,7 @@ class GalleryVC: UIViewController {
     
     @IBAction func closeButtonPressed(_ sender: UIButton) {
         
-        print(#function)
+        self.dismiss(animated: true)
         
     }
     
