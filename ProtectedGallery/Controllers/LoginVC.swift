@@ -47,12 +47,12 @@ class LoginVC: UIViewController {
             
         }
     }
-
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     // MARK: - Actions
@@ -66,7 +66,7 @@ class LoginVC: UIViewController {
     
     @IBAction func faceIDButtonPressed(_ sender: Any) {
         
-        print(#function)
+        authenticate()
         
     }
     
@@ -82,6 +82,52 @@ class LoginVC: UIViewController {
         }
         
         self.enteredPin.removeLast()
+        
+    }
+    
+    // MARK: - Private Methods
+    
+    private func authenticate() {
+        
+        let context = LAContext()
+        
+        var error: NSError? = nil
+        
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            
+            let reason = "Identify yourself!"
+            
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics,
+                                   localizedReason: reason) {
+                [weak self] success, authenticationError in
+                
+                DispatchQueue.main.async {
+                    
+                    guard success, error == nil else{
+                        
+                        return
+                        
+                    }
+                    
+                    let destinationVC = GalleryVC()
+                    
+                    destinationVC.modalPresentationStyle = .fullScreen
+                    
+                    self?.present(destinationVC, animated: true)
+                    
+                }
+                
+            }
+            
+        } else {
+            
+            let alert = UIAlertController(title: "Unavailable", message: "FaceID Auth not available", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+            
+            present(alert, animated: true)
+            
+        }
         
     }
     
