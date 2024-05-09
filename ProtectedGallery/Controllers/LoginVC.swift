@@ -7,6 +7,8 @@
 
 import UIKit
 
+import LocalAuthentication
+
 class LoginVC: UIViewController {
     
     // MARK: - Outlets
