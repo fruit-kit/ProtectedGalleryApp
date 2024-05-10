@@ -31,11 +31,7 @@ class LoginVC: UIViewController {
             
             if enteredPin == requiredPin {
                 
-                let destinationVC = GalleryVC()
-                
-                destinationVC.modalPresentationStyle = .fullScreen
-                
-                self.present(destinationVC, animated: true)
+                presentGalleryVC()
                 
             }
             
@@ -87,6 +83,16 @@ class LoginVC: UIViewController {
     
     // MARK: - Private Methods
     
+    private func presentGalleryVC() {
+        
+        let destinationVC = GalleryVC()
+        
+        destinationVC.modalPresentationStyle = .fullScreen
+        
+        self.present(destinationVC, animated: true)
+        
+    }
+    
     private func authenticate() {
         
         let context = LAContext()
@@ -109,11 +115,7 @@ class LoginVC: UIViewController {
                         
                     }
                     
-                    let destinationVC = GalleryVC()
-                    
-                    destinationVC.modalPresentationStyle = .fullScreen
-                    
-                    self?.present(destinationVC, animated: true)
+                    self?.presentGalleryVC()
                     
                 }
                 
