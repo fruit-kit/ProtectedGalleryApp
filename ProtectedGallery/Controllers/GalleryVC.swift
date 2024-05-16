@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GalleryVC: UIViewController {
+class GalleryVC: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     // MARK: - View Lifecycle
 
@@ -30,7 +30,21 @@ class GalleryVC: UIViewController {
                                       message: "Choose source for adding photo",
                                       preferredStyle: .actionSheet)
         
-        let cameraAction = UIAlertAction(title: "Take Photo", style: .default)
+        let cameraAction = UIAlertAction(title: "Take Photo", style: .default) {_ in 
+            
+            let imagePicker = UIImagePickerController()
+            
+            imagePicker.delegate = self
+            
+            imagePicker.allowsEditing = true
+            
+            imagePicker.mediaTypes = ["public.image", "public.movie"]
+            
+            imagePicker.sourceType = .camera
+            
+            self.present(imagePicker, animated: true)
+            
+        }
         
         let galleryAction = UIAlertAction(title: "Open Gallery", style: .default)
         
