@@ -26,7 +26,23 @@ class GalleryVC: UIViewController {
     
     @IBAction func addPhotoButtonPressed(_ sender: UIButton) {
         
-        print(#function)
+        let alert = UIAlertController(title: "Add photo",
+                                      message: "Choose source for adding photo",
+                                      preferredStyle: .actionSheet)
+        
+        let cameraAction = UIAlertAction(title: "Take Photo", style: .default)
+        
+        let galleryAction = UIAlertAction(title: "Open Gallery", style: .default)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alert.addAction(cameraAction)
+        
+        alert.addAction(galleryAction)
+        
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated: true)
         
     }
     
