@@ -46,7 +46,21 @@ class GalleryVC: UIViewController, UIImagePickerControllerDelegate & UINavigatio
             
         }
         
-        let galleryAction = UIAlertAction(title: "Open Gallery", style: .default)
+        let galleryAction = UIAlertAction(title: "Open Gallery", style: .default) {_ in
+            
+            let imagePicker = UIImagePickerController()
+            
+            imagePicker.delegate = self
+            
+            imagePicker.allowsEditing = true
+            
+            imagePicker.mediaTypes = ["public.image", "public.movie"]
+            
+            imagePicker.sourceType = .photoLibrary
+            
+            self.present(imagePicker, animated: true)
+            
+        }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         
