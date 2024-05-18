@@ -32,6 +32,34 @@ class GalleryVC: UIViewController, UIImagePickerControllerDelegate & UINavigatio
         
         let cameraAction = UIAlertAction(title: "Take Photo", style: .default) {_ in 
             
+            self.showImagePicker(source: .camera)
+            
+        }
+        
+        let galleryAction = UIAlertAction(title: "Open Gallery", style: .default) {_ in
+            
+            self.showImagePicker(source: .photoLibrary)
+            
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alert.addAction(cameraAction)
+        
+        alert.addAction(galleryAction)
+        
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated: true)
+        
+    }
+    
+    // MARK: - Private Methods
+    
+    private func showImagePicker(source type: UIImagePickerController.SourceType) {
+        
+        if type == .camera {
+            
             let imagePicker = UIImagePickerController()
             
             imagePicker.delegate = self
@@ -44,9 +72,7 @@ class GalleryVC: UIViewController, UIImagePickerControllerDelegate & UINavigatio
             
             self.present(imagePicker, animated: true)
             
-        }
-        
-        let galleryAction = UIAlertAction(title: "Open Gallery", style: .default) {_ in
+        } else if type == .photoLibrary {
             
             let imagePicker = UIImagePickerController()
             
@@ -61,16 +87,6 @@ class GalleryVC: UIViewController, UIImagePickerControllerDelegate & UINavigatio
             self.present(imagePicker, animated: true)
             
         }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        
-        alert.addAction(cameraAction)
-        
-        alert.addAction(galleryAction)
-        
-        alert.addAction(cancelAction)
-        
-        self.present(alert, animated: true)
         
     }
     
