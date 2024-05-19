@@ -26,11 +26,19 @@ class GalleryVC: UIViewController, UIImagePickerControllerDelegate & UINavigatio
     
     @IBAction func addPhotoButtonPressed(_ sender: UIButton) {
         
+        showImagePickerAlert()
+        
+    }
+    
+    // MARK: - Private Methods
+    
+    private func showImagePickerAlert() {
+        
         let alert = UIAlertController(title: "Add photo",
                                       message: "Choose source for adding photo",
                                       preferredStyle: .actionSheet)
         
-        let cameraAction = UIAlertAction(title: "Take Photo", style: .default) {_ in 
+        let cameraAction = UIAlertAction(title: "Take Photo", style: .default) {_ in
             
             self.showImagePicker(source: .camera)
             
@@ -53,8 +61,6 @@ class GalleryVC: UIViewController, UIImagePickerControllerDelegate & UINavigatio
         self.present(alert, animated: true)
         
     }
-    
-    // MARK: - Private Methods
     
     private func showImagePicker(source type: UIImagePickerController.SourceType) {
         
