@@ -40,13 +40,13 @@ class GalleryVC: UIViewController, UIImagePickerControllerDelegate & UINavigatio
         
         let cameraAction = UIAlertAction(title: "Take Photo", style: .default) {_ in
             
-            self.showImagePicker(source: .camera)
+            self.showImagePickerControlle(source: .camera)
             
         }
         
         let galleryAction = UIAlertAction(title: "Open Gallery", style: .default) {_ in
             
-            self.showImagePicker(source: .photoLibrary)
+            self.showImagePickerControlle(source: .photoLibrary)
             
         }
         
@@ -62,7 +62,7 @@ class GalleryVC: UIViewController, UIImagePickerControllerDelegate & UINavigatio
         
     }
     
-    private func showImagePicker(source type: UIImagePickerController.SourceType) {
+    private func showImagePickerControlle(source type: UIImagePickerController.SourceType) {
         
         if type == .camera {
             
