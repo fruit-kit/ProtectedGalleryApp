@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GalleryVC: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class GalleryVC: UIViewController {
     
     // MARK: - View Lifecycle
 
@@ -95,5 +95,19 @@ class GalleryVC: UIViewController, UIImagePickerControllerDelegate & UINavigatio
         }
         
     }
+    
+}
+
+// MARK: - Extensions
+
+// MARK: UIImagePickerControllerDelegate
+
+extension GalleryVC: UIImagePickerControllerDelegate {
+    
+}
+
+// MARK: UINavigationControllerDelegate
+
+extension GalleryVC: UINavigationControllerDelegate {
     
 }
