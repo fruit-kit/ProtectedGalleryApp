@@ -9,6 +9,10 @@ import UIKit
 
 class GalleryVC: UIViewController {
     
+    // MARK: - Outlets
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
     // MARK: - View Lifecycle
 
     override func viewDidLoad() {
