@@ -108,6 +108,28 @@ class GalleryVC: UIViewController {
 
 extension GalleryVC: UIImagePickerControllerDelegate {
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            
+            if let image = info[.editedImage] as? UIImage {
+                
+                self.imageView.image = image
+                
+            } else if let image = info[.originalImage] as? UIImage {
+                
+                self.imageView.image = image
+                
+            }
+            
+            picker.dismiss(animated: true, completion: nil)
+        
+        }
+        
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            
+            picker.dismiss(animated: true, completion: nil)
+            
+        }
+    
 }
 
 // MARK: UINavigationControllerDelegate
