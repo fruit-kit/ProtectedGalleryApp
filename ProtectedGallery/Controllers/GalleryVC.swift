@@ -14,10 +14,10 @@ class GalleryVC: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     // MARK: - View Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     // MARK: - Actions
@@ -109,55 +109,55 @@ class GalleryVC: UIViewController {
 extension GalleryVC: UIImagePickerControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let image = info[.editedImage] as? UIImage {
             
-            if let image = info[.editedImage] as? UIImage {
+            if let imageData = image.pngData() {
                 
-                if let imageData = image.pngData() {
+                let fileManager = FileManager.default
+                
+                guard let documentsURL = fileManager.urls(
+                    for: .documentDirectory,
+                    in: .userDomainMask
+                ).first else {
                     
-                    let fileManager = FileManager.default
+                    return
                     
-                    guard let url = fileManager.urls(
-                        for: .documentDirectory,
-                        in: .userDomainMask
-                    ).first else {
-                        
-                        return
-                        
-                    }
-                    
-                    let fileURL = url.appendingPathComponent("savedImage.png")
-                    
-                    do {
-                        
-                                    try imageData.write(to: fileURL)
-                        
-                                    print("Image successfully saved to \(fileURL)")
-                        
-                                } catch {
-                                    
-                                    print("Error saving image: \(error)")
-                                    
-                                }
-            
                 }
                 
-                self.imageView.image = image
+                let fileURL = documentsURL.appendingPathComponent("savedImage.png")
                 
-            } else if let image = info[.originalImage] as? UIImage {
-                
-                self.imageView.image = image
+                do {
+                    
+                    try imageData.write(to: fileURL)
+                    
+                    print("Image successfully saved to \(fileURL)")
+                    
+                } catch {
+                    
+                    print("Error saving image: \(error)")
+                    
+                }
                 
             }
             
-            picker.dismiss(animated: true, completion: nil)
-        
-        }
-        
-        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            self.imageView.image = image
             
-            picker.dismiss(animated: true, completion: nil)
+        } else if let image = info[.originalImage] as? UIImage {
+            
+            self.imageView.image = image
             
         }
+        
+        picker.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+        picker.dismiss(animated: true, completion: nil)
+        
+    }
     
 }
 
