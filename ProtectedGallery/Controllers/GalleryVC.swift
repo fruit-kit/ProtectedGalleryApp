@@ -112,6 +112,35 @@ extension GalleryVC: UIImagePickerControllerDelegate {
             
             if let image = info[.editedImage] as? UIImage {
                 
+                if let imageData = image.pngData() {
+                    
+                    let fileManager = FileManager.default
+                    
+                    guard let url = fileManager.urls(
+                        for: .documentDirectory,
+                        in: .userDomainMask
+                    ).first else {
+                        
+                        return
+                        
+                    }
+                    
+                    let fileURL = url.appendingPathComponent("savedImage.png")
+                    
+                    do {
+                        
+                                    try imageData.write(to: fileURL)
+                        
+                                    print("Image successfully saved to \(fileURL)")
+                        
+                                } catch {
+                                    
+                                    print("Error saving image: \(error)")
+                                    
+                                }
+            
+                }
+                
                 self.imageView.image = image
                 
             } else if let image = info[.originalImage] as? UIImage {
