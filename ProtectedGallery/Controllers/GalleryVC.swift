@@ -133,6 +133,12 @@ extension GalleryVC: UIImagePickerControllerDelegate {
                     
                     print("Image successfully saved to \(fileURL)")
                     
+                    if let loadImage = UIImage(contentsOfFile: fileURL.path) {
+                        
+                        self.imageView.image = loadImage
+                        
+                    }
+                    
                 } catch {
                     
                     print("Error saving image: \(error)")
@@ -140,8 +146,6 @@ extension GalleryVC: UIImagePickerControllerDelegate {
                 }
                 
             }
-            
-            self.imageView.image = image
             
         } else if let image = info[.originalImage] as? UIImage {
             
