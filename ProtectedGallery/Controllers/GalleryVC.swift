@@ -18,6 +18,26 @@ class GalleryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let imagePath = UserDefaults.standard.string(forKey: "imagePath") {
+            
+            let fileURL = URL(fileURLWithPath: imagePath)
+            
+            if let image = UIImage(contentsOfFile: fileURL.path) {
+                
+                    self.imageView.image = image
+                
+                } else {
+                    
+                    print("Failed to load image from file")
+                    
+                }
+            
+        } else {
+            
+            print("Image path not found in UserDefaults")
+            
+        }
+        
     }
     
     // MARK: - Actions
@@ -134,6 +154,8 @@ extension GalleryVC: UIImagePickerControllerDelegate {
                     print("Image successfully saved to \(fileURL)")
                     
                     if let loadImage = UIImage(contentsOfFile: fileURL.path) {
+                        
+                        UserDefaults.standard.set(fileURL.path, forKey: "imagePath")
                         
                         self.imageView.image = loadImage
                         
