@@ -18,25 +18,7 @@ class GalleryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let imagePath = UserDefaults.standard.string(forKey: "imagePath") {
-            
-            let fileURL = URL(fileURLWithPath: imagePath)
-            
-            if let image = UIImage(contentsOfFile: fileURL.path) {
-                
-                    self.imageView.image = image
-                
-                } else {
-                    
-                    print("Failed to load image from file")
-                    
-                }
-            
-        } else {
-            
-            print("Image path not found in UserDefaults")
-            
-        }
+        loadImageFromUserDefaults()
         
     }
     
@@ -115,6 +97,30 @@ class GalleryVC: UIViewController {
             imagePicker.sourceType = .photoLibrary
             
             self.present(imagePicker, animated: true)
+            
+        }
+        
+    }
+    
+    private func loadImageFromUserDefaults() {
+        
+        if let imagePath = UserDefaults.standard.string(forKey: "imagePath") {
+            
+            let fileURL = URL(fileURLWithPath: imagePath)
+            
+            if let image = UIImage(contentsOfFile: fileURL.path) {
+                
+                self.imageView.image = image
+                
+            } else {
+                
+                print("Failed to load image from file")
+                
+            }
+            
+        } else {
+            
+            print("Image path not found in UserDefaults")
             
         }
         
