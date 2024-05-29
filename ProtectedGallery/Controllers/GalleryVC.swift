@@ -151,7 +151,27 @@ extension GalleryVC: UIImagePickerControllerDelegate {
                     
                 }
                 
-                let fileURL = documentsURL.appendingPathComponent("savedImage.png")
+                let mediaFolderName = "Media"
+                
+                let mediaURL = documentsURL.appendingPathComponent(mediaFolderName)
+                
+                if !fileManager.fileExists(atPath: mediaURL.path) {
+                    
+                    do {
+                        
+                        try fileManager.createDirectory(at: mediaURL, withIntermediateDirectories: false, attributes: nil)
+                        
+                        print("Media folder created successfully")
+                        
+                    } catch {
+                        
+                        print("Error creating media folder: \(error)")
+                        
+                    }
+                    
+                }
+                
+                let fileURL = mediaURL.appendingPathComponent("savedImage.png")
                 
                 do {
                     
