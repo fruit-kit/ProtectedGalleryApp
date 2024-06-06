@@ -10,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GalleryVC" customModule="ProtectedGallery" customModuleProvider="target">
             <connections>
-                <outlet property="imageView" destination="mee-M8-V6z" id="ksy-pH-0FM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -43,20 +42,13 @@
                         <action selector="closeButtonPressed:" destination="-1" eventType="touchUpInside" id="aar-9H-KdC"/>
                     </connections>
                 </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mee-M8-V6z">
-                    <rect key="frame" x="16" y="141" width="361" height="661"/>
-                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IuB-M5-IFn" secondAttribute="trailing" constant="16" id="BMY-Wf-2Tz"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mee-M8-V6z" secondAttribute="trailing" constant="16" id="TPT-Me-xq1"/>
-                <constraint firstItem="mee-M8-V6z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="eJT-qO-pZE"/>
                 <constraint firstItem="vFD-47-tsJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="iNt-Gb-fmA"/>
-                <constraint firstItem="mee-M8-V6z" firstAttribute="top" secondItem="vFD-47-tsJ" secondAttribute="bottom" constant="16" id="iiu-4F-sjV"/>
                 <constraint firstItem="IuB-M5-IFn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="nk9-Pj-gTJ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="mee-M8-V6z" secondAttribute="bottom" constant="16" id="t3M-tl-UwQ"/>
                 <constraint firstItem="vFD-47-tsJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="u4q-XG-pRb"/>
             </constraints>
             <point key="canvasLocation" x="131" y="-12"/>

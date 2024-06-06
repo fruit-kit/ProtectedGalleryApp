@@ -9,16 +9,10 @@ import UIKit
 
 class GalleryVC: UIViewController {
     
-    // MARK: - Outlets
-    
-    @IBOutlet weak var imageView: UIImageView!
-    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadImageFromUserDefaults()
         
     }
     
@@ -102,30 +96,6 @@ class GalleryVC: UIViewController {
         
     }
     
-    private func loadImageFromUserDefaults() {
-        
-        if let imagePath = UserDefaults.standard.string(forKey: "imagePath") {
-            
-            let fileURL = URL(fileURLWithPath: imagePath)
-            
-            if let image = UIImage(contentsOfFile: fileURL.path) {
-                
-                self.imageView.image = image
-                
-            } else {
-                
-                print("Failed to load image from file")
-                
-            }
-            
-        } else {
-            
-            print("Image path not found in UserDefaults")
-            
-        }
-        
-    }
-    
 }
 
 // MARK: - Extensions
@@ -181,9 +151,6 @@ extension GalleryVC: UIImagePickerControllerDelegate {
                     
                     if let loadImage = UIImage(contentsOfFile: fileURL.path) {
                         
-                        UserDefaults.standard.set(fileURL.path, forKey: "imagePath")
-                        
-                        self.imageView.image = loadImage
                         
                     }
                     
@@ -197,7 +164,6 @@ extension GalleryVC: UIImagePickerControllerDelegate {
             
         } else if let image = info[.originalImage] as? UIImage {
             
-            self.imageView.image = image
             
         }
         
