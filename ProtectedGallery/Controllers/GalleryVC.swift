@@ -16,6 +16,8 @@ class GalleryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        registerGalleryCell()
+        
         self.collectionView.delegate = self
         
         self.collectionView.dataSource = self
@@ -37,6 +39,14 @@ class GalleryVC: UIViewController {
     }
     
     // MARK: - Private Methods
+    
+    private func registerGalleryCell() {
+        
+        let galleryNib = UINib(nibName: "GalleryCollectionViewCell", bundle: .main)
+        
+        collectionView.register(galleryNib, forCellWithReuseIdentifier: "GalleryCollectionViewCell")
+        
+    }
     
     private func showImagePickerAlert() {
         
@@ -249,26 +259,38 @@ extension GalleryVC: UINavigationControllerDelegate {
     
 }
 
-// MARK: UICollectionViewDelegate
-
-extension GalleryVC: UICollectionViewDelegate {
-    
-}
-
 // MARK: UICollectionViewDataSource
 
 extension GalleryVC: UICollectionViewDataSource {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        
+        1
+        
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        0
+        4
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GalleryCollectionViewCell", for: indexPath) as? GalleryCollectionViewCell else {
+            
+            return UICollectionViewCell()
+            
+        }
+        
+        return cell
         
     }
+    
+}
+
+// MARK: UICollectionViewDelegate
+
+extension GalleryVC: UICollectionViewDelegate {
     
 }

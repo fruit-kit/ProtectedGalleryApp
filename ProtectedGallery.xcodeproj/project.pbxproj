@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		843C6EED2C11CA26001AA585 /* GalleryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843C6EEC2C11CA26001AA585 /* GalleryCollectionViewCell.xib */; };
+		843C6EEE2C11CA26001AA585 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C6EEB2C11CA26001AA585 /* GalleryCollectionViewCell.swift */; };
 		CC617BD02BE761DA0079F4BB /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CC617BCF2BE761DA0079F4BB /* Lottie */; };
 		CC617BD32BE763AF0079F4BB /* splashAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = CC617BD22BE763AF0079F4BB /* splashAnimation.json */; };
 		CC617BD62BE7755D0079F4BB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC617BD42BE7755D0079F4BB /* LoginVC.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		843C6EEB2C11CA26001AA585 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		843C6EEC2C11CA26001AA585 /* GalleryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryCollectionViewCell.xib; sourceTree = "<group>"; };
 		CC617BD22BE763AF0079F4BB /* splashAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splashAnimation.json; sourceTree = "<group>"; };
 		CC617BD42BE7755D0079F4BB /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		CC617BD52BE7755D0079F4BB /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
@@ -49,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		843C6EEA2C11C9E0001AA585 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				843C6EEB2C11CA26001AA585 /* GalleryCollectionViewCell.swift */,
+				843C6EEC2C11CA26001AA585 /* GalleryCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		CC4603292BE6375300A81A0F /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +131,7 @@
 				CC46032C2BE637AC00A81A0F /* App */,
 				CC46032A2BE6377100A81A0F /* Controllers */,
 				CC4603292BE6375300A81A0F /* Views */,
+				843C6EEA2C11C9E0001AA585 /* Cells */,
 				CC46032B2BE6378400A81A0F /* Resources */,
 				CCFCC6692BE61B6B0079E08B /* Info.plist */,
 			);
@@ -193,6 +207,7 @@
 				CC617BD32BE763AF0079F4BB /* splashAnimation.json in Resources */,
 				CCFCC6652BE61B6B0079E08B /* Assets.xcassets in Resources */,
 				CCFCC6682BE61B6B0079E08B /* Base in Resources */,
+				843C6EED2C11CA26001AA585 /* GalleryCollectionViewCell.xib in Resources */,
 				CCFCC6632BE61B6A0079E08B /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCFCC6602BE61B6A0079E08B /* SplashVC.swift in Sources */,
+				843C6EEE2C11CA26001AA585 /* GalleryCollectionViewCell.swift in Sources */,
 				CCCCDEA52BEA41C700984255 /* GalleryVC.swift in Sources */,
 				CCFCC65C2BE61B6A0079E08B /* AppDelegate.swift in Sources */,
 				CC617BD62BE7755D0079F4BB /* LoginVC.swift in Sources */,
