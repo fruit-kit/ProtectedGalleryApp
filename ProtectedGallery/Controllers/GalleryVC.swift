@@ -9,10 +9,16 @@ import UIKit
 
 class GalleryVC: UIViewController {
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.collectionView.delegate = self
+        
+        self.collectionView.dataSource = self
         
     }
     
@@ -240,5 +246,29 @@ extension GalleryVC: UIImagePickerControllerDelegate {
 // MARK: UINavigationControllerDelegate
 
 extension GalleryVC: UINavigationControllerDelegate {
+    
+}
+
+// MARK: UICollectionViewDelegate
+
+extension GalleryVC: UICollectionViewDelegate {
+    
+}
+
+// MARK: UICollectionViewDataSource
+
+extension GalleryVC: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        0
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        UICollectionViewCell()
+        
+    }
     
 }
