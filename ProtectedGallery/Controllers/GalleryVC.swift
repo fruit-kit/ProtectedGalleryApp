@@ -141,7 +141,9 @@ extension GalleryVC: UIImagePickerControllerDelegate {
                     
                 }
                 
-                let fileURL = mediaURL.appendingPathComponent("savedImage.png")
+                let uniqueFileName = UUID().uuidString + ".png"
+                
+                let fileURL = mediaURL.appendingPathComponent(uniqueFileName)
                 
                 do {
                     
@@ -151,6 +153,7 @@ extension GalleryVC: UIImagePickerControllerDelegate {
                     
                     if let loadImage = UIImage(contentsOfFile: fileURL.path) {
                         
+                        // MARK: Если нужно что-то сделать с загруженным изображением
                         
                     }
                     
@@ -163,13 +166,68 @@ extension GalleryVC: UIImagePickerControllerDelegate {
             }
             
         } else if let image = info[.originalImage] as? UIImage {
-            
-            
+            if let imageData = image.pngData() {
+                
+                let fileManager = FileManager.default
+                
+                guard let documentsURL = fileManager.urls(
+                    for: .documentDirectory,
+                    in: .userDomainMask
+                ).first else {
+                    
+                    return
+                    
+                }
+                
+                let mediaFolderName = "Media"
+                
+                let mediaURL = documentsURL.appendingPathComponent(mediaFolderName)
+                
+                if !fileManager.fileExists(atPath: mediaURL.path) {
+                    
+                    do {
+                        
+                        try fileManager.createDirectory(at: mediaURL, withIntermediateDirectories: false, attributes: nil)
+                        
+                        print("Media folder created successfully")
+                        
+                    } catch {
+                        
+                        print("Error creating media folder: \(error)")
+                        
+                    }
+                    
+                }
+                
+                let uniqueFileName = UUID().uuidString + ".png"
+                
+                let fileURL = mediaURL.appendingPathComponent(uniqueFileName)
+                
+                do {
+                    
+                    try imageData.write(to: fileURL)
+                    
+                    print("Image successfully saved to \(fileURL)")
+                    
+                    if let loadImage = UIImage(contentsOfFile: fileURL.path) {
+                        
+                        // MARK: Если нужно что-то сделать с загруженным изображением
+                        
+                    }
+                    
+                } catch {
+                    
+                    print("Error saving image: \(error)")
+                    
+                }
+                
+            }
         }
         
         picker.dismiss(animated: true, completion: nil)
         
     }
+
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         
