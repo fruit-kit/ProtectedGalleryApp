@@ -44,7 +44,7 @@
                     </connections>
                 </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="zTH-pP-ewh">
-                    <rect key="frame" x="16" y="141" width="361" height="661"/>
+                    <rect key="frame" x="0.0" y="141" width="393" height="661"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1nZ-7z-6tr">
                         <size key="itemSize" width="128" height="128"/>
@@ -59,9 +59,9 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IuB-M5-IFn" secondAttribute="trailing" constant="16" id="BMY-Wf-2Tz"/>
                 <constraint firstItem="zTH-pP-ewh" firstAttribute="top" secondItem="IuB-M5-IFn" secondAttribute="bottom" constant="16" id="KfO-Jo-1MY"/>
-                <constraint firstItem="zTH-pP-ewh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="QLg-QH-dpH"/>
+                <constraint firstItem="zTH-pP-ewh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QLg-QH-dpH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zTH-pP-ewh" secondAttribute="bottom" constant="16" id="YZ0-DX-zYF"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zTH-pP-ewh" secondAttribute="trailing" constant="16" id="cqW-JT-X0d"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zTH-pP-ewh" secondAttribute="trailing" id="cqW-JT-X0d"/>
                 <constraint firstItem="vFD-47-tsJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="iNt-Gb-fmA"/>
                 <constraint firstItem="IuB-M5-IFn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="nk9-Pj-gTJ"/>
                 <constraint firstItem="vFD-47-tsJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="u4q-XG-pRb"/>

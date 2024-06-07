@@ -9,6 +9,18 @@ import UIKit
 
 class GalleryVC: UIViewController {
     
+    // MARK: - Properties
+    
+    private let photosPerRow: CGFloat = 4
+    
+    private let spacingBetweenPhotos: CGFloat = 5
+    
+    private lazy var sectionInsets: UIEdgeInsets = {
+        return UIEdgeInsets(top: spacingBetweenPhotos, left: spacingBetweenPhotos, bottom: spacingBetweenPhotos, right: spacingBetweenPhotos)
+    }()
+    
+    // MARK: - Outlets
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - View Lifecycle
@@ -271,7 +283,7 @@ extension GalleryVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        4
+        100
         
     }
     
@@ -292,5 +304,39 @@ extension GalleryVC: UICollectionViewDataSource {
 // MARK: UICollectionViewDelegate
 
 extension GalleryVC: UICollectionViewDelegate {
+    
+}
+
+// MARK: UICollectionViewDelegateFlowLayout
+
+extension GalleryVC: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let totalSpacing = spacingBetweenPhotos * (photosPerRow - 1) + sectionInsets.left + sectionInsets.right
+        
+        let width = (self.view.frame.width - totalSpacing) / photosPerRow
+        
+        return CGSize(width: width, height: width)
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+           return sectionInsets
+        
+       }
+       
+       func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+           
+           return spacingBetweenPhotos
+           
+       }
+       
+       func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+           
+           return spacingBetweenPhotos
+           
+       }
     
 }
