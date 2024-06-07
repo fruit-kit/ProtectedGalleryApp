@@ -19,6 +19,8 @@ class GalleryVC: UIViewController {
         return UIEdgeInsets(top: spacingBetweenPhotos, left: spacingBetweenPhotos, bottom: spacingBetweenPhotos, right: spacingBetweenPhotos)
     }()
     
+    private var arrayOfPhotos: [UIImage] = []
+    
     // MARK: - Outlets
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -181,7 +183,9 @@ extension GalleryVC: UIImagePickerControllerDelegate {
                     
                     if let loadImage = UIImage(contentsOfFile: fileURL.path) {
                         
-                        // MARK: Если нужно что-то сделать с загруженным изображением
+                        self.arrayOfPhotos.append(loadImage)
+                        
+                        self.collectionView.reloadData()
                         
                     }
                     
@@ -239,7 +243,9 @@ extension GalleryVC: UIImagePickerControllerDelegate {
                     
                     if let loadImage = UIImage(contentsOfFile: fileURL.path) {
                         
-                        // MARK: Если нужно что-то сделать с загруженным изображением
+                        self.arrayOfPhotos.append(loadImage)
+                        
+                        self.collectionView.reloadData()
                         
                     }
                     
@@ -283,7 +289,7 @@ extension GalleryVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        100
+        self.arrayOfPhotos.count
         
     }
     
@@ -294,6 +300,8 @@ extension GalleryVC: UICollectionViewDataSource {
             return UICollectionViewCell()
             
         }
+        
+        cell.imageView.image = self.arrayOfPhotos[indexPath.row]
         
         return cell
         
