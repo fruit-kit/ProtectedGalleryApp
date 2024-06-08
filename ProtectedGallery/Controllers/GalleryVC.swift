@@ -347,6 +347,18 @@ extension GalleryVC: UICollectionViewDataSource {
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let selectedPhoto = self.arrayOfPhotos[indexPath.row]
+        
+        let fullScreenPhotoVC = FullScreenPhotoVC()
+        
+        fullScreenPhotoVC.photo = selectedPhoto
+        
+        self.present(fullScreenPhotoVC, animated: true)
+        
+    }
+    
 }
 
 // MARK: UICollectionViewDelegate
