@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		843C6EED2C11CA26001AA585 /* GalleryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843C6EEC2C11CA26001AA585 /* GalleryCollectionViewCell.xib */; };
 		843C6EEE2C11CA26001AA585 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C6EEB2C11CA26001AA585 /* GalleryCollectionViewCell.swift */; };
+		8451DFB32C143B8D00A61DA5 /* FullScreenPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451DFB12C143B8C00A61DA5 /* FullScreenPhotoVC.swift */; };
+		8451DFB42C143B8D00A61DA5 /* FullScreenPhotoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8451DFB22C143B8C00A61DA5 /* FullScreenPhotoVC.xib */; };
 		CC617BD02BE761DA0079F4BB /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CC617BCF2BE761DA0079F4BB /* Lottie */; };
 		CC617BD32BE763AF0079F4BB /* splashAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = CC617BD22BE763AF0079F4BB /* splashAnimation.json */; };
 		CC617BD62BE7755D0079F4BB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC617BD42BE7755D0079F4BB /* LoginVC.swift */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		843C6EEB2C11CA26001AA585 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		843C6EEC2C11CA26001AA585 /* GalleryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryCollectionViewCell.xib; sourceTree = "<group>"; };
+		8451DFB12C143B8C00A61DA5 /* FullScreenPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenPhotoVC.swift; sourceTree = "<group>"; };
+		8451DFB22C143B8C00A61DA5 /* FullScreenPhotoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullScreenPhotoVC.xib; sourceTree = "<group>"; };
 		CC617BD22BE763AF0079F4BB /* splashAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splashAnimation.json; sourceTree = "<group>"; };
 		CC617BD42BE7755D0079F4BB /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		CC617BD52BE7755D0079F4BB /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
@@ -65,6 +69,7 @@
 		CC4603292BE6375300A81A0F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8451DFB22C143B8C00A61DA5 /* FullScreenPhotoVC.xib */,
 				CCFCC6612BE61B6A0079E08B /* Main.storyboard */,
 				CCFCC6662BE61B6B0079E08B /* LaunchScreen.storyboard */,
 				CC617BD52BE7755D0079F4BB /* LoginVC.xib */,
@@ -79,6 +84,7 @@
 				CCCCDEA32BEA41C700984255 /* GalleryVC.swift */,
 				CCFCC65F2BE61B6A0079E08B /* SplashVC.swift */,
 				CC617BD42BE7755D0079F4BB /* LoginVC.swift */,
+				8451DFB12C143B8C00A61DA5 /* FullScreenPhotoVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -206,6 +212,7 @@
 				CCCCDEA62BEA41C700984255 /* GalleryVC.xib in Resources */,
 				CC617BD32BE763AF0079F4BB /* splashAnimation.json in Resources */,
 				CCFCC6652BE61B6B0079E08B /* Assets.xcassets in Resources */,
+				8451DFB42C143B8D00A61DA5 /* FullScreenPhotoVC.xib in Resources */,
 				CCFCC6682BE61B6B0079E08B /* Base in Resources */,
 				843C6EED2C11CA26001AA585 /* GalleryCollectionViewCell.xib in Resources */,
 				CCFCC6632BE61B6A0079E08B /* Base in Resources */,
@@ -220,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCFCC6602BE61B6A0079E08B /* SplashVC.swift in Sources */,
+				8451DFB32C143B8D00A61DA5 /* FullScreenPhotoVC.swift in Sources */,
 				843C6EEE2C11CA26001AA585 /* GalleryCollectionViewCell.swift in Sources */,
 				CCCCDEA52BEA41C700984255 /* GalleryVC.swift in Sources */,
 				CCFCC65C2BE61B6A0079E08B /* AppDelegate.swift in Sources */,
