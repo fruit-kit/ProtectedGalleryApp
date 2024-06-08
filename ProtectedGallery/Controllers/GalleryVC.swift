@@ -36,6 +36,46 @@ class GalleryVC: UIViewController {
         
         self.collectionView.dataSource = self
         
+        loadImagesFromDirectory()
+        
+    }
+    
+    // MARK: - Private Methods
+    
+    private func loadImagesFromDirectory() {
+        
+        let fileManager = FileManager.default
+        
+        guard let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            return
+        }
+        
+        let mediaFolderName = "Media"
+        
+            let mediaURL = documentsURL.appendingPathComponent(mediaFolderName)
+        
+        do {
+            
+                let fileURLs = try fileManager.contentsOfDirectory(at: mediaURL, includingPropertiesForKeys: nil)
+            
+                for fileURL in fileURLs {
+                    
+                    if let image = UIImage(contentsOfFile: fileURL.path) {
+                        
+                        self.arrayOfPhotos.append(image)
+                        
+                    }
+                    
+                }
+            
+                self.collectionView.reloadData()
+            
+            } catch {
+                
+                print("Error while enumerating files \(mediaURL.path): \(error.localizedDescription)")
+                
+            }
+        
     }
     
     // MARK: - Actions
