@@ -11,9 +11,9 @@ class GalleryVC: UIViewController {
     
     // MARK: - Properties
     
-    private let photosPerRow: CGFloat = 4
+    private let photosPerRow: CGFloat = 3
     
-    private let spacingBetweenPhotos: CGFloat = 5
+    private let spacingBetweenPhotos: CGFloat = 2
     
     private lazy var sectionInsets: UIEdgeInsets = {
         return UIEdgeInsets(top: spacingBetweenPhotos, left: spacingBetweenPhotos, bottom: spacingBetweenPhotos, right: spacingBetweenPhotos)
