@@ -14,11 +14,7 @@ class GalleryVC: UIViewController {
     private let photosPerRow: CGFloat = 3
     
     private let spacingBetweenPhotos: CGFloat = 2
-    
-    private lazy var sectionInsets: UIEdgeInsets = {
-        return UIEdgeInsets(top: spacingBetweenPhotos, left: spacingBetweenPhotos, bottom: spacingBetweenPhotos, right: spacingBetweenPhotos)
-    }()
-    
+        
     private var arrayOfPhotos: [UIImage] = []
     
     // MARK: - Outlets
@@ -373,19 +369,13 @@ extension GalleryVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let totalSpacing = spacingBetweenPhotos * (photosPerRow - 1) + sectionInsets.left + sectionInsets.right
+        let totalSpacing = spacingBetweenPhotos * (photosPerRow - 1)
         
         let width = (self.view.frame.width - totalSpacing) / photosPerRow
         
         return CGSize(width: width, height: width)
         
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-           return sectionInsets
-        
-       }
        
        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
            
